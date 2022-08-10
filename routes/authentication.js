@@ -22,7 +22,7 @@ router.post('/authenticate', async (req, res) => {
             }])
         }
 
-        const dbUser = await user.findOne({ email: credentials.email });
+        const dbUser = await user.findOne({ email: credentials.email }).select('+password').exec();
 
         if (user) {
 
