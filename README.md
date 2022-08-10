@@ -7,8 +7,6 @@ This is just an node.js api for my react project (https://github.com/viniciuseho
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [![Node][Node.js]][Node-url]
 * [![Mongo][MongoDB]][MongoDB-url]
 
@@ -24,7 +22,7 @@ if you want to start the project remember to the following:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[Node.js]:<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+[Node.js]:<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /> 
 [Node-url]:https://nodejs.org
 [MongoDB]:<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
-[MongoDB-url]:www.mongodb.com
+[MongoDB-url]:https://www.mongodb.com
