@@ -6,6 +6,7 @@ const mongoString = process.env.DATABASE_URL;
 const baseApiRoute = '/api';
 const routes = require('./routes/routes');
 const authenticationRouter = require('./routes/authentication')
+const auth = require("./middleware/auth")
 
 mongoose.connect(mongoString);
 const database = mongoose.connection;
@@ -26,5 +27,5 @@ app.listen(3000, () => {
     console.log('Server Started at ${3000}')
 })
 
-app.use(`${baseApiRoute}`, routes)
+app.use(`${baseApiRoute}`, auth, routes)
 app.use(`${baseApiRoute}/authentication`, authenticationRouter)
