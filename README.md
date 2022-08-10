@@ -13,4 +13,4 @@ if you want to start the project remember to the following:
     ```env
     DATABASE_URL = {your connection string}
     SECRET = {your secret}
-    ```s
+    ```
