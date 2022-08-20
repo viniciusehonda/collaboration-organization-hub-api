@@ -15,6 +15,11 @@ const sprintSchema = new mongoose.Schema({
         ref: 'Project',
         default: null
     },
+    milestone: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Milestone',
+        default: null
+    },
     creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
