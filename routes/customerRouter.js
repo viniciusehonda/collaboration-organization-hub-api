@@ -1,20 +1,20 @@
 const express = require('express');
 
 const router = express.Router();
-const Company = require('../models/company');
+const Customer = require('../models/customer');
 
 router.post('/post', async (req, res) => {
     try {
 
-        var companyWithName = await Company.findOne({ name: req.body.name });
-        if (companyWithName) {
+        var customerWithName = await Customer.findOne({ name: req.body.name });
+        if (customerWithName) {
             res.status(400).json([{
                 errorCode: '[FieldIsUnique]',
                 field: 'name'
             }])
         }
         else {
-            const data = new Company({
+            const data = new Customer({
                 name: req.body.name,
                 description: req.body.description
             })
@@ -29,7 +29,7 @@ router.post('/post', async (req, res) => {
 
 router.get('/getAll', async (req, res) => {
     try {
-        const data = await Company.find();
+        const data = await Customer.find();
         res.status(200).json(data)
     }
     catch (error) {
@@ -39,7 +39,7 @@ router.get('/getAll', async (req, res) => {
 
 router.get('/get/:id', async (req, res) => {
     try {
-        const data = await Company.findById(req.params.id);
+        const data = await Customer.findById(req.params.id);
         res.status(200).json(data)
     }
     catch (error) {
@@ -53,7 +53,7 @@ router.patch('/update/:id', async (req, res) => {
         const updatedData = req.body;
         const options = { new: true };
 
-        Company.findByIdAndUpdate(
+        Customer.findByIdAndUpdate(
             id, 
             updatedData,
             options
@@ -69,7 +69,7 @@ router.patch('/update/:id', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        Company.findByIdAndDelete(id)
+        Customer.findByIdAndDelete(id)
         .then((result) => {
             res.status(200).json(result);
         });

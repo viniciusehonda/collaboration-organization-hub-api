@@ -20,9 +20,9 @@ const projectSchema = new mongoose.Schema({
         type: String,
         default: null
     },
-    company: {
+    customer: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Company',
+        ref: 'Customer',
         default: null
     },
     status: {
