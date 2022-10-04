@@ -7,6 +7,7 @@ const mongoString = process.env.DATABASE_URL;
 const baseApiRoute = '/api';
 const authenticationRouter = require('./routes/authentication')
 const customerRouter = require('./routes/customerRouter')
+const taskRouter = require('./routes/taskRouter')
 const userRouter = require('./routes/userRouter')
 const auth = require("./middleware/auth")
 
@@ -34,4 +35,5 @@ app.listen(3000, () => {
 
 app.use(`${baseApiRoute}/authentication`, authenticationRouter)
     .use(`${baseApiRoute}/customer`, auth, customerRouter)
-    .use(`${baseApiRoute}/user`, auth, userRouter);
+    .use(`${baseApiRoute}/user`, auth, userRouter)
+    .use(`${baseApiRoute}/task`, auth, taskRouter);

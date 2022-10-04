@@ -4,10 +4,26 @@ const taskSchema = new mongoose.Schema({
     title: {
         required: true,
         type: String,
-        unique: true
+        unique: false
     },
     description: {
         type: String,
+        default: null
+    },
+    expectedTime: {
+        type: Number,
+        default: 0
+    },
+    realTime: {
+        type: Number,
+        default: 0,
+    },
+    creation: {
+        type: Date,
+        default: Date.now()
+    },
+    deadline: {
+        type: Date,
         default: null
     },
     project: {
